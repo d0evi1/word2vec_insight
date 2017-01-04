@@ -54,8 +54,8 @@ void printState(long long* count,
 
 
 /**
- * 使用词频创建一棵的Huffman树. 频率高的字将具有short唯一
- * 的二进制码(binary code).
+ * 使用词频创建一棵的Huffman树. 频率高的字将具有更短的
+ * Huffman二进制码(binary code).
  *
  */
 // Create binary Huffman tree using the word counts
@@ -191,13 +191,14 @@ void CreateBinaryTree() {
 }
 
 /**
- * 
+ * 代码运行：
+ * gcc ./huffman_tree.cpp; ./a.out
  */
 int main()
 {
     vocab_size = 6; 
-    vocab = (vocab_word*) calloc(vocab_size+1, sizeof(vocab_word));
-    memset(vocab, 0, sizeof(vocab_word) * vocab_size+1);
+    vocab = (vocab_word*) calloc(vocab_size, sizeof(vocab_word));
+    memset(vocab, 0, sizeof(vocab_word) * (vocab_size));
 
     // 初始化code/point.
     for (int a = 0; a < vocab_size; a++) {
