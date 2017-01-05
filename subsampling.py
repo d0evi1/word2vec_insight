@@ -24,7 +24,7 @@ def subsampling_prob2(freq, sampling):
 def subsampling_prob3(freq, sampling):
     global next_random
     next_random = (next_random * 25214903917 + 11) & 0xFFFF
-    return next_random /65535.0 -(math.sqrt(sampling/freq)+sampling/freq)
+    return next_random /65536.0 -(math.sqrt(sampling/freq)+sampling/freq)
 
 fig = plt.figure()
 
