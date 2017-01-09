@@ -23,6 +23,8 @@ for i in range(0, EXP_TABLE_SIZE):
     expTable[i] = math.exp(i * 1.0 / EXP_TABLE_SIZE * 2 - 1) * MAX_EXP
     expTable[i] = expTable[i] / (expTable[i] + 1)
 
+
+
 print expTable
 
 fig = plt.figure()
@@ -30,15 +32,20 @@ fig = plt.figure()
 ax = plt.subplot(1,1,1)
 
 ## 设置坐标范围
-plt.ylim(ymax=1.2)
-plt.ylim(ymin=0.5)
+#plt.ylim(ymax=1.2)
+#plt.ylim(ymin=0.5)
 
-
-## 绘制4条曲线.
-ax.plot(expTable, label="exp")
+ax.plot(expTable)
+#ax.plot(expTable, label="exp")
 
 handles, labels = ax.get_legend_handles_labels()
 ax.legend(handles[::-1], labels[::-1])
 
+f = [((i + MAX_EXP) * (EXP_TABLE_SIZE / MAX_EXP / 2)) for i in range(0,100)]
+print f
+
+
 plt.show()
+
+
 
