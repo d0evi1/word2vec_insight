@@ -26,8 +26,8 @@ for i in range(0, EXP_TABLE_SIZE):
 
 print expTable
 
-## 此处f 范围(-6,6)用f/1000.0来代替. 
-m = [int((f/1000.0 + MAX_EXP) * (EXP_TABLE_SIZE / MAX_EXP / 2)) for f in range(-6000, 6000)]
+## 此处f 范围(-6,6)用f/1000.0来代替, 取12000个点.
+m = [int((f/10.0 + MAX_EXP) * (EXP_TABLE_SIZE / MAX_EXP / 2)) for f in range(-60, 60)]
 
 print m
 
