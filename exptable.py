@@ -19,6 +19,15 @@ expTable = [0 for i in range(0, EXP_TABLE_SIZE)]
 
 print len(expTable)
 
+
+#----------------------
+# 最原始的logit函数.
+#----------------------
+def raw_logistic(x):
+    e = math.exp(x)
+    return e/(e+1)
+
+
 # 初始化。
 for i in range(0, EXP_TABLE_SIZE):
     expTable[i] = math.exp((i * 1.0 / EXP_TABLE_SIZE * 2 - 1) * MAX_EXP)
@@ -33,7 +42,9 @@ print m
 
 
 result = [expTable[x] for x in m]
-#print result
+print result
+
+#result2 = [raw_logistic(x) for x in range(-10, 10)]
 
 fig = plt.figure()
 
@@ -43,7 +54,13 @@ ax = plt.subplot(1,1,1)
 #plt.ylim(ymax=1.2)
 #plt.ylim(ymin=0.5)
 
-ax.plot(result)
+#
+#ax.plot(result)
+
+## 绘制原始的坐标点.
+print raw_logistic(6)
+print raw_logistic(-6)
+ax.plot(result2)
 
 #ax.plot(expTable)
 #ax.plot(expTable, label="exp")
